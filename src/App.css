@@ -1,38 +1,96 @@
-.App {
-  text-align: center;
+body, p, h1, h2 {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    overflow-y: auto;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+li {
+    list-style-type: none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+h1 {
+    font-size: 2.5rem;
 }
+
+h2 {
+    font-size: 1.25rem;
+    color: #11609f;
+}
+
+p {
+    font-size: 1rem;
+}
+
+.person {
+    min-width: 400px;
+    min-height: 600px;
+    background: url(https://cloud.visura.co/users/13409-user_photo-4062.medium.jpeg) no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    box-shadow: 1px 2px 12px 0px #000;
+    position: relative;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    margin-top: 1rem;
+}
+
+.social-links li {
+    margin: .5rem;
+}
+
+.menu {
+    height: 55vh;
+    display: flex;
+    background-color: #3d5c7a; /* 1c1e1f */
+    text-align: center;
+}
+
+.menu ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+}
+
+.menu ul li {
+    padding: 1rem;
+    width: 40px;
+    height: 40px;
+}
+
+.menu ul li:hover {
+    transition: ease-in-out .3s;
+    background-color: #fafafa;
+    color: #3d5c7a;
+    cursor: pointer;
+}
+
+.info {
+    background-color: #1c1e1f;
+    height: 55vh;
+    width: 40%;
+    padding: 1.5rem;
+}
+
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+    background-color: #282c34;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: white;
 }
 
 .App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+    color: #61dafb;
 }
