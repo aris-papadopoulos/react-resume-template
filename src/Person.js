@@ -1,7 +1,7 @@
 import React from 'react';
+import { FaLinkedin } from 'react-icons/fa';
 import { FaFacebook } from "react-icons/fa";
 import { FaTwitter } from 'react-icons/fa';
-import { FaLinkedin } from 'react-icons/fa';
 import { FaInstagram } from 'react-icons/fa';
 import { FaFlickr } from 'react-icons/fa';
 
@@ -18,11 +18,11 @@ function Person() {
                 <h1>Joanna Doe</h1>
                 <h2>Front End Developer</h2>
                 <ul className="social-links">
-                    <li><FaFacebook /></li>
-                    <li><FaTwitter /></li>
-                    <li><FaLinkedin /></li>
-                    <li><FaInstagram /></li>
-                    <li><FaFlickr /></li>
+                    <li><a target="_blank" rel="noopener noreferrer" href="https://ca.linkedin.com/in/joanna-doe-66965039?trk=people-guest_people_search-card"><FaLinkedin /></a></li>
+                    <li><a target="_blank" rel="noopener noreferrer" href="https://www.facebook.com/people/Joanna-Doe/100009692499268"><FaFacebook /></a></li>
+                    <li><a target="_blank" rel="noopener noreferrer" href="https://twitter.com/hales_u?lang=en"><FaTwitter /></a></li>
+                    <li><a target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/joanna671princess/?hl=en"><FaInstagram /></a></li>
+                    <li><a target="_blank" rel="noopener noreferrer" href="https://www.flickr.com/photos/72696347@N07/"><FaFlickr /></a></li>
                 </ul>
             </div>
         </div>
