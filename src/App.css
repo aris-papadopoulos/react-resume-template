@@ -1,8 +1,11 @@
-body, p, h1, h2 {
-    margin: 0;
-    padding: 0;
+body, p, h1, h2, h3, h4, h5 {
     font-family: 'Poppins', sans-serif;
     overflow-y: auto;
+}
+
+p, h1, h2, h3, h4, h5 {
+    margin: 0 0 10px;
+    padding: 0;
 }
 
 li {
@@ -18,8 +21,14 @@ h2 {
     color: #11609f;
 }
 
+h3 {
+    font-size: 1.75rem;
+    color: #11609f;
+}
+
 p {
     font-size: 1rem;
+    margin: 0 0 10px;
 }
 
 .person {
@@ -42,6 +51,11 @@ p {
 
 .social-links li {
     margin: .5rem;
+}
+
+.social-links a {
+    font-size: 1.5rem;
+    color: #fff;
 }
 
 .menu {
