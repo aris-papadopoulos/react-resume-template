@@ -79,7 +79,7 @@ p {
     height: 40px;
 }
 
-.menu ul li:hover {
+.menu ul li:hover, .menu ul li.selected {
     transition: ease-in-out .3s;
     background-color: #fafafa;
     color: #3d5c7a;
