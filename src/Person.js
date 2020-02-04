@@ -5,10 +5,13 @@ import { FaTwitter } from 'react-icons/fa';
 import { FaInstagram } from 'react-icons/fa';
 import { FaFlickr } from 'react-icons/fa';
 
+// Helpers
+import { GOOGLE_SHEET_ID, GOOGLE_API_KEY } from './options';
+
 const arrayToObject = (arr) =>
 Object.assign({}, ...arr.map(item => ({[item[0]]: item[1]})));
 
-const fetchURL = 'https://sheets.googleapis.com/v4/spreadsheets/1raPYKhL5Bk0y3H3ti7o4bvGktzGfMW99nMNTXYK-idE/values/BasicInfo!A:B?key=AIzaSyBhiqVypmyLHYPmqZYtvdSvxEopcLZBdYU';
+const fetchURL = `https://sheets.googleapis.com/v4/spreadsheets/${GOOGLE_SHEET_ID}/values/basic!A:B?key=${GOOGLE_API_KEY}`;
 let objectData;
 
 function Person() {

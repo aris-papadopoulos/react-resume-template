@@ -3,6 +3,9 @@ import React, { useState, useEffect } from 'react';
 // Other 3rd party
 import { Scrollbars } from 'react-custom-scrollbars';
 
+// Helpers
+import { GOOGLE_SHEET_ID, GOOGLE_API_KEY } from './options';
+
 let objectData = {
     main: null,
     work_samples: null,
@@ -18,8 +21,7 @@ const Info = (props) => {
 
     const { sheetTitle, range } = props.selected;
 
-    const fetchURL = `https://sheets.googleapis.com/v4/spreadsheets/1raPYKhL5Bk0y3H3ti7o4bvGktzGfMW99nMNTXYK-idE/values/${sheetTitle}!${range}?key=AIzaSyBhiqVypmyLHYPmqZYtvdSvxEopcLZBdYU`;
-
+    const fetchURL = `https://sheets.googleapis.com/v4/spreadsheets/${GOOGLE_SHEET_ID}/values/${sheetTitle}!${range}?key=${GOOGLE_API_KEY}`;
 
     const [infoData, setInfoData] = useState(objectData[props.selected]);
 
