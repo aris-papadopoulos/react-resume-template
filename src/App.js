@@ -8,10 +8,10 @@ import Info from './Info';
 
 const App = () => {
 
-    const [selected, setSelected] = useState('main');
+    const [selected, setSelected] = useState({sheetTitle: 'main', range: 'A:B'});
 
-    function changeMenu(i) {
-        setSelected(i);
+    function changeMenu(menuItem) {
+        setSelected(menuItem);
     }
 
     return (
