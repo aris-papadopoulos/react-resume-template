@@ -29,11 +29,6 @@ function Person() {
         <div className="person" style={{
             background: `url(${(personData && personData.picture) ? personData.picture : ''}) no-repeat`
         }}>
-            {/* <img 
-                src="https://cloud.visura.co/users/13409-user_photo-4062.medium.jpeg" 
-                srcSet="https://cloud.visura.co/users/13409-user_photo-4062.medium.jpeg" 
-                sizes="100vw" alt="Resume person" 
-            /> */}
             <div className="basic-info">
                 <h1>{(personData) ? personData.fullName : ''}</h1>
                 <h2>{(personData) ? personData.jobTitle : ''}</h2>
