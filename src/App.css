@@ -106,6 +106,17 @@ p {
     color: white;
 }
 
-.App-link {
-    color: #61dafb;
+.grid-wrapper {
+    display: grid;
+    justify-content: center;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 2rem;
+}
+
+.grid-wrapper article {
+
+}
+
+.grid-wrapper img {
+    max-width: 100%
 }

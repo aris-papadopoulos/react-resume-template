@@ -1,11 +1,40 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
 // Other 3rd party
 import { Scrollbars } from 'react-custom-scrollbars';
 
-class Info extends React.Component {
+let objectData = {
+    main: null,
+    work_samples: null,
+    articles: null,
+    interests: null,
+    contact: null
+}
 
-    renderView({ style, ...props }) {
+const arrayToObject = (arr) =>
+Object.assign({}, ...arr.map(item => ({[item[0]]: item[1]})));
+
+const Info = (props) => {
+
+    const { sheetTitle, range } = props.selected;
+
+    const fetchURL = `https://sheets.googleapis.com/v4/spreadsheets/1raPYKhL5Bk0y3H3ti7o4bvGktzGfMW99nMNTXYK-idE/values/${sheetTitle}!${range}?key=AIzaSyBhiqVypmyLHYPmqZYtvdSvxEopcLZBdYU`;
+
+
+    const [infoData, setInfoData] = useState(objectData[props.selected]);
+
+    useEffect(() => {
+        if (!objectData[sheetTitle])
+        fetch(fetchURL)
+            .then(response => response.json())
+            .then(data => {
+                objectData[sheetTitle] = data;
+                console.log(objectData)
+                setInfoData(data);
+        });
+    });
+
+    function renderView({ style, ...props }) {
         const viewStyle = {
             padding: '0 15px'
         };
@@ -17,24 +46,68 @@ class Info extends React.Component {
         );
     }
 
-    render() {
-        return (
-            <div className="info">
-                <Scrollbars renderView={this.renderView}>
-                    <h3>About me</h3>
-                    <p>Prolific, full stack web developer with a passion for metrics and beating former "best-yets." Prototyped 25 new product features per year for Flexor, Inc. Decreased rework by 22% and costs by 15%. Consistently receive high user experience scores for all web development projects, including a 55% increase for Flexor, Inc. Passionate about building world class web applications. One of my sites received a 2015 Webby for Best Navigation and Structure.</p>
-                    <p>
-                        Today, we live and breathe media, minute-by-minute, hour-by-hour. News, television, social media even recognize.
-                        Critical media studies requires you to study the subject in-depth,
-                        analysing and critiquing what you find.
-                        From newspapers, radio and television, to the Internet and mobile technologies, media, communication technologies and information tools impact our daily lives in countless ways.
-                        We use them to socialize with others, to seek out or share information and entertainment and to participate in social and cultural debates.
-                        But what are media, exactly? How do media institutions, technologies, and content inform the development of society and culture and influence our activities and behaviours?
-                    </p>
-                </Scrollbars>
-            </div>
-        );
+    function createMarkup(html) {
+        return {__html: html};
     }
+
+    function renderInfoType() {
+
+        const { sheetTitle } = props.selected;
+
+        switch(sheetTitle) {
+
+            case 'main':
+            case 'interests':
+                return (objectData[sheetTitle]) ? objectData[sheetTitle].values.map((section, i) => {
+                    return (
+                        <section key={i}>
+                            <h3>{section[0]}</h3>
+                            <p>{section[1]}</p>
+                        </section>
+                    )
+                })
+                : null
+            case 'articles':
+            case 'work-samples':
+                return (objectData[sheetTitle]) ? 
+                    <div className="grid-wrapper">
+                        {(objectData[sheetTitle].values) ? objectData[sheetTitle].values.map((item, i) => {
+                            console.log(item[i], i)
+                            return (
+                                <article key={item[0]}>
+                                    <img srcSet={item[2]} sizes="100vw" alt={item[0]} />
+                                    <h4>{item[0]}</h4>
+                                    <p>{item[1]}</p>
+                                </article>
+                            )
+                        }) : null}
+                    </div>
+                : null
+            case 'contact':
+                console.log(objectData);
+                const contactData = (objectData[sheetTitle]) ? arrayToObject(objectData[sheetTitle].values) : null;
+                return (contactData) ? (
+                    <div>
+                        <p><strong>E-Mail: </strong>{objectData[sheetTitle].values[1][1]}</p>
+                        <p><strong>Phone: </strong>{objectData[sheetTitle].values[2][1]}</p>
+                        <div dangerouslySetInnerHTML={createMarkup(objectData[sheetTitle].values[0][1])} />
+                    </div>
+                )
+                : null
+
+            default:
+                return null
+        }
+    }
+
+    console.log(infoData);
+    return (
+        <div className="info">
+            <Scrollbars renderView={renderView}>
+                {renderInfoType()}
+            </Scrollbars>
+        </div>
+    );
 }
 
 export default Info;
