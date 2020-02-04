@@ -15,11 +15,11 @@ const Menu = (props) => {
     return (
         <div className="menu">
             <ul>
-                <li onClick={() => props.changeMenu('main')} className={(props.selected === 'main') ? 'active' : ''}><FaUser /></li>
-                <li onClick={() => props.changeMenu('work-samples')} className={(props.selected === 'work-samples') ? 'active' : ''}><FaBriefcase /></li>
-                <li onClick={() => props.changeMenu('articles')} className={(props.selected === 'articles') ? 'active' : ''}><FaRegEdit /></li>
-                <li onClick={() => props.changeMenu('interests')} className={(props.selected === 'interests') ? 'active' : ''}><FaCoffee /></li>
-                <li onClick={() => props.changeMenu('contact')} className={(props.selected === 'contact') ? 'active' : ''}><FaPhone /></li>
+                <li onClick={() => props.changeMenu({sheetTitle: 'main', range: 'A:B'})} className={(props.selected.sheetTitle === 'main') ? 'active' : ''}><FaUser /></li>
+                <li onClick={() => props.changeMenu({sheetTitle: 'work-samples', range: 'A:C'})} className={(props.selected.sheetTitle === 'work-samples') ? 'active' : ''}><FaBriefcase /></li>
+                <li onClick={() => props.changeMenu({sheetTitle: 'articles', range: 'A:C'})} className={(props.selected.sheetTitle === 'articles') ? 'active' : ''}><FaRegEdit /></li>
+                <li onClick={() => props.changeMenu({sheetTitle: 'interests', range: 'A:B'})} className={(props.selected.sheetTitle === 'interests') ? 'active' : ''}><FaCoffee /></li>
+                <li onClick={() => props.changeMenu({sheetTitle: 'contact', range: 'A:B'})} className={(props.selected.sheetTitle === 'contact') ? 'active' : ''}><FaPhone /></li>
             </ul>
         </div>
     );
