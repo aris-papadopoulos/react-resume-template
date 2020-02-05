@@ -1,11 +1,17 @@
 import React, { useState, useEffect } from 'react';
 
+import { FaUserGraduate } from "react-icons/fa";
+import { FaBriefcase } from 'react-icons/fa';
+import { FaCoffee } from 'react-icons/fa';
+
 // Other 3rd party
 import { Scrollbars } from 'react-custom-scrollbars';
 
 // Helpers
 import { GOOGLE_SHEET_ID, GOOGLE_API_KEY } from './options';
 
+/*  Holds data as they come from the Google Sheets API requests, 
+    so that we no longer need to refetch after first request */
 let objectData = {
     main: null,
     work_samples: null,
@@ -14,13 +20,43 @@ let objectData = {
     contact: null
 }
 
+// Converts a 2-column array into an object of key:value pairs
 const arrayToObject = (arr) =>
 Object.assign({}, ...arr.map(item => ({[item[0]]: item[1]})));
+
+
+/*  Google Sheet API returns all results in array. This function is used to group the 'main' info into 
+    paragraphs, experience, education & interests, in order to later render them in the correct section */
+const groupMainInfoArray = (arr) => {
+    // Object used to group API data
+    let mainInfoObj = {
+        paragraph: [],
+        experience: [],
+        education: [],
+        interests: []
+    };
+    arr.map(item => {
+        if (item[0] === 'paragraph') {
+            mainInfoObj.paragraph.push([item[1], item[2]]);
+        } 
+        else if (item[0] === 'experience') {
+            mainInfoObj.experience.push([item[1], item[2], item[3]]);
+        }
+        else if (item[0] === 'education') {
+            mainInfoObj.education.push([item[1], item[2], item[3]]);
+        }
+        else if (item[0] === 'interests') {
+            mainInfoObj.interests.push([item[1], item[2]]);
+        }
+        return mainInfoObj;
+    });
+    return mainInfoObj;
+}
+
 
 const Info = (props) => {
 
     const { sheetTitle, range } = props.selected;
-
     const fetchURL = `https://sheets.googleapis.com/v4/spreadsheets/${GOOGLE_SHEET_ID}/values/${sheetTitle}!${range}?key=${GOOGLE_API_KEY}`;
 
     const [infoData, setInfoData] = useState(objectData[props.selected]);
@@ -31,7 +67,6 @@ const Info = (props) => {
             .then(response => response.json())
             .then(data => {
                 objectData[sheetTitle] = data;
-                console.log(objectData)
                 setInfoData(data);
         });
     });
@@ -59,17 +94,68 @@ const Info = (props) => {
         switch(sheetTitle) {
 
             case 'main':
-            case 'interests':
-                return (objectData[sheetTitle]) ? objectData[sheetTitle].values.map((section, i) => {
-                    return (
-                        <section key={i}>
-                            <h3>{section[0]}</h3>
-                            <p>{section[1]}</p>
+                let groupedData;
+                if (objectData[sheetTitle]) {
+                    groupedData = groupMainInfoArray(objectData[sheetTitle].values);
+                }
+                return (objectData[sheetTitle]) ? 
+                    <>
+                        <section className="paragraph">
+                            {groupedData.paragraph.map((paragraph, i) => {
+                                return (
+                                    <article key={i}>
+                                        <h3>{paragraph[0]}</h3>
+                                        <p>{paragraph[1]}</p>
+                                    </article>
+                                )
+                            })}
                         </section>
-                    )
-                })
+                        <section className="experience">
+                            <div className="main-info-title">
+                                <FaBriefcase />
+                                <h2>Experience</h2>
+                            </div>
+                            {groupedData.experience.map((experience, i) => {
+                                return (
+                                    <article key={i}>
+                                        <span className="period">{experience[2]}</span>
+                                        <h3>{experience[0]}</h3>
+                                        <p>{experience[1]}</p>
+                                    </article>
+                                )
+                            })}
+                        </section>
+                        <section className="education">
+                            <div className="main-info-title">
+                                <FaUserGraduate />
+                                <h2>Education</h2>
+                            </div>
+                            {groupedData.education.map((education, i) => {
+                                return (
+                                    <article key={i}>
+                                        <span className="period">{education[2]}</span>
+                                        <h3>{education[0]}</h3>
+                                        <p>{education[1]}</p>
+                                    </article>
+                                )
+                            })}
+                        </section>
+                        <section className="interests">
+                            <div className="main-info-title">
+                                <FaCoffee />
+                                <h2>Interests</h2>
+                            </div>
+                            {groupedData.interests.map((interests, i) => {
+                                return (
+                                    <article key={i}>
+                                        <h3>{interests[0]}</h3>
+                                        <p>{interests[1]}</p>
+                                    </article>
+                                )
+                            })}
+                        </section>
+                    </>
                 : null
-            case 'articles':
             case 'work-samples':
                 return (objectData[sheetTitle]) ? 
                     <div className="grid-wrapper">
