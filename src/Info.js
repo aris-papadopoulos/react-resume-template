@@ -156,11 +156,31 @@ const Info = (props) => {
                         </section>
                     </>
                 : null
+            case 'skill-set':
+                return (objectData[sheetTitle]) ? 
+                    <>
+                        <h3>Technical Skill Set</h3>
+                        <div className="skill-set">
+                            {(objectData[sheetTitle].values) ? objectData[sheetTitle].values.map(skill => {
+                                return (
+                                    <div className="skill">
+                                        <p className="skill-info">
+                                            <span className="skill-name">{skill[0]}</span>
+                                            <span className="skill-level">{`${skill[1]}%`}</span>
+                                        </p>
+                                        <div class="progress-container">
+                                            <div class="progress-bar" style={{width: `${skill[1]}%`}}></div>
+                                        </div>
+                                    </div>
+                                )
+                            }) : null}
+                        </div>
+                    </>
+                : null
             case 'work-samples':
                 return (objectData[sheetTitle]) ? 
                     <div className="grid-wrapper">
                         {(objectData[sheetTitle].values) ? objectData[sheetTitle].values.map((item, i) => {
-                            console.log(item[i], i)
                             return (
                                 <article key={item[0]}>
                                     <img srcSet={item[2]} sizes="100vw" alt={item[0]} />

@@ -90,6 +90,7 @@ p {
     background-color: #1c1e1f;
     height: 55vh;
     width: 40%;
+    max-width: 600px;
     padding: 1rem;
     box-shadow: 1px 2px 12px 0px #000;
 }
@@ -111,10 +112,6 @@ p {
     justify-content: center;
     grid-template-columns: 1fr 1fr;
     grid-gap: 2rem;
-}
-
-.grid-wrapper article {
-
 }
 
 .grid-wrapper img {
@@ -147,4 +144,23 @@ section.paragraph .period, section.experience .period, section.education .period
 section.paragraph p, section.experience p, section.education p, section.interests p {
     font-size: 14px;
     color: #fff;
+}
+
+.skill-set p {
+    display: flex;
+    justify-content: space-between;
+    margin: 0;
+}
+.progress-container {
+    margin-bottom: .75rem;
+    background-color: #fafafa!important;
+    border-radius: 8px;
+}
+.progress-bar {
+    color: #fff!important;
+    background-color: #2196F3!important;
+    height: .25rem;
+    padding: 0 16px;
+    font-size: 12px;
+    border-radius: 8px;
 }
