@@ -103,9 +103,9 @@ const Info = (props) => {
                     groupedData = groupMainInfoArray(objectData[sheetTitle].values);
                 }
                 return (objectData[sheetTitle]) ? 
-                    <>
+                    <main>
                         <h2>About me</h2>
-                        <section className="paragraph">
+                        <section className="main-info paragraph">
                             {groupedData.paragraph.map((paragraph, i) => {
                                 return (
                                     <article key={i}>
@@ -115,7 +115,7 @@ const Info = (props) => {
                                 )
                             })}
                         </section>
-                        <section className="experience">
+                        <section className="main-info experience">
                             <div className="main-info-title">
                                 <FaBriefcase />
                                 <h2>Experience</h2>
@@ -130,7 +130,7 @@ const Info = (props) => {
                                 )
                             })}
                         </section>
-                        <section className="education">
+                        <section className="main-info education">
                             <div className="main-info-title">
                                 <FaUserGraduate />
                                 <h2>Education</h2>
@@ -145,7 +145,7 @@ const Info = (props) => {
                                 )
                             })}
                         </section>
-                        <section className="interests">
+                        <section className="main-info interests">
                             <div className="main-info-title">
                                 <FaCoffee />
                                 <h2>Interests</h2>
@@ -159,11 +159,11 @@ const Info = (props) => {
                                 )
                             })}
                         </section>
-                    </>
+                    </main>
                 : null
             case 'skill-set':
                 return (objectData[sheetTitle]) ? 
-                    <>
+                    <main>
                         <h2>Technical Skill Set</h2>
                         <div className="skill-set">
                             {(objectData[sheetTitle].values) ? objectData[sheetTitle].values.map(skill => {
@@ -180,11 +180,11 @@ const Info = (props) => {
                                 )
                             }) : null}
                         </div>
-                    </>
+                    </main>
                 : null
             case 'work-samples':
                 return (objectData[sheetTitle]) ? 
-                    <>
+                    <main>
                         <h2>Recent Projects</h2>
                         <div className="work-samples">
                             {(objectData[sheetTitle].values) ? objectData[sheetTitle].values.map((item, i) => {
@@ -197,18 +197,18 @@ const Info = (props) => {
                                 )
                             }) : null}
                         </div>
-                    </>
+                    </main>
                 : null
             case 'contact':
                 const contactData = (objectData[sheetTitle]) ? arrayToObject(objectData[sheetTitle].values) : null;
                 return (contactData) ? (
-                    <div>
+                    <main>
                         <h2>Contact</h2>
                         <p>{contactData.text}</p>
                         <div dangerouslySetInnerHTML={createMarkup(contactData.location)} />
                         <p className="contact-data"><FaEnvelope />{contactData.email}</p>
                         <p className="contact-data"><FaPhone />{contactData.phone}</p>
-                    </div>
+                    </main>
                 )
                 : null
 

@@ -18,12 +18,10 @@ h1 {
 
 h2 {
     font-size: 1.75rem;
-    color: #11609f;
 }
 
 h3 {
     font-size: 1.25rem;
-    color: #11609f;
 }
 
 p {
@@ -50,7 +48,6 @@ p {
 .menu {
     height: 55vh;
     display: flex;
-    background-color: #3d5c7a; /* 1c1e1f */
     text-align: center;
     box-shadow: 1px 2px 12px 0px #000;
 }
@@ -69,7 +66,6 @@ p {
 .menu ul li:hover, .menu ul li.active {
     transition: ease-in-out .3s;
     background-color: #fafafa;
-    color: #3d5c7a;
     cursor: pointer;
 }
 
@@ -111,33 +107,29 @@ p {
 /* PAGES */
 
 /* General */
-section.paragraph h3, section.experience h3, section.education h3, section.interests h3 {
+.main-info h3 {
     font-size: 16px;
     color: #fff;
 }
-section.paragraph .period, section.experience .period, section.education .period, section.interests .period {
-    font-size: 12px;
-    color: #00afec;
-}
-section.paragraph p, section.experience p, section.education p, section.interests p {
+.main-info p {
     font-size: 14px;
     color: #fff;
 }
-
+section .period {
+    font-size: 12px;
+}
 
 /* MAIN */
 
 .main-info-title {
     display: flex;
     align-items: center;
-    color: #11609c;
     margin: 3rem 0 .5rem 0;
 }
 .main-info-title h2 {
     font-size: 1.5rem;
     padding: 0 20px;
     margin: 0;
-    color: #11609c;
 }
 
 
@@ -150,12 +142,11 @@ section.paragraph p, section.experience p, section.education p, section.interest
 }
 .progress-container {
     margin-bottom: .75rem;
-    background-color: #fafafa!important;
+    background-color: #fafafa;
     border-radius: 8px;
 }
 .progress-bar {
-    color: #fff!important;
-    background-color: #2196F3!important;
+    color: #fff;
     height: .25rem;
     padding: 0 16px;
     font-size: 12px;
@@ -200,5 +191,24 @@ section.paragraph p, section.experience p, section.education p, section.interest
 }
 .contact-data svg {
     margin-right: 20px;
+}
+
+
+/* COLORS */
+
+/* Blue */
+.menu {
+    background-color: #3d5c7a;
+}
+.progress-bar {
+    background-color: #2196F3;
+}
+.menu ul li:hover, .menu ul li.active {
+    color: #3d5c7a;
+}
+h2, h3, .info svg {
     color: #11609c;
+}
+.period {
+    color: #2196F3;
 }
