@@ -4,7 +4,6 @@ import { FaStar } from 'react-icons/fa';
 import { FaBriefcase } from 'react-icons/fa';
 import { FaPhone } from 'react-icons/fa';
 
-import { sections } from './options';
 import { pages } from './helpers';
 
 /**
@@ -12,6 +11,8 @@ import { pages } from './helpers';
 *   Site menu, selects page to be displayed in "info" component
 */
 const Menu = (props) => {
+
+    const { sections } = props;
 
     return (
         <div className="menu">

@@ -1,14 +1,9 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 
-function OptionsPanel() {
+function OptionsPanel(props) {
 
-    const [themeColor, setThemeColor] = useState('blue');
-
-    const [MainPage, setMainPage] = useState(true);
-    const [SkillsetPage, setSkillsetPage] = useState(true);
-    const [WorksamplesPage, setWorksamplesPage] = useState(true);
-    const [ContactPage, setContactPage] = useState(true);
+    const { themeColor, setThemeColor, sections, setSections } = props;
 
     return (
         <div className="options-panel">
@@ -26,28 +21,28 @@ function OptionsPanel() {
                 <div>
                     <span className="page">Main</span>
                     <label className="switch">
-                        <input type="checkbox" onClick={() => setMainPage(!MainPage)} checked={MainPage} />
+                        <input type="checkbox" onClick={() => setSections({...sections, main: !sections.main })} checked={sections.main} />
                         <span className="slider round"></span>
                     </label>
                 </div>
                 <div>
                     <span className="page">Skill set</span>
                     <label className="switch">
-                        <input type="checkbox" onClick={() => setSkillsetPage(!SkillsetPage)} checked={SkillsetPage} />
+                        <input type="checkbox" onClick={() => setSections({...sections, skill_set: !sections.skill_set })} checked={sections.skill_set} />
                         <span className="slider round"></span>
                     </label>
                 </div>
                 <div>
                     <span className="page">Work samples</span>
                     <label className="switch">
-                        <input type="checkbox" onClick={() => setWorksamplesPage(!WorksamplesPage)} checked={WorksamplesPage} />
+                        <input type="checkbox" onClick={() => setSections({...sections, work_samples: !sections.work_samples })} checked={sections.work_samples} />
                         <span className="slider round"></span>
                     </label>
                 </div>
                 <div>
                     <span className="page">Contact</span>
                     <label className="switch">
-                        <input type="checkbox" onClick={() => setContactPage(!ContactPage)} checked={ContactPage} />
+                        <input type="checkbox" onClick={() => setSections({...sections, contact: !sections.contact })} checked={sections.contact} />
                         <span className="slider round"></span>
                     </label>
                 </div>
