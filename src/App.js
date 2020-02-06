@@ -5,6 +5,7 @@ import Menu from './Menu';
 import Person from './Person';
 import Info from './Info';
 
+import { color_theme } from './options';
 import { pages } from './helpers';
 
 
@@ -16,14 +17,11 @@ const App = () => {
     function changeMenu(menuItem) {
         setSelected(menuItem);
     }
-
     return (
-        <div className="App">
-        <header className="App-header">
+        <div className={`App ${color_theme}`}>
             <Menu selected={selected} changeMenu={changeMenu} />
             <Person />
             <Info selected={selected} />
-        </header>
         </div>
     );
 }

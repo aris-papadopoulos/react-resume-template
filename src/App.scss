@@ -33,7 +33,7 @@ p {
 /* SITE SECTIONS */
 
 /* Wrapper */
-.App-header {
+.App {
     background-color: #282c34;
     min-height: 100vh;
     display: flex;
@@ -196,9 +196,10 @@ section .period {
 
 /* COLORS */
 
-/* Blue */
+
+
 .App {
-    .blue {
+    &.blue {
         .menu {
             background-color: #3d5c7a;
         }
@@ -215,7 +216,7 @@ section .period {
             color: #2196F3;
         }
     }
-    .red {
+    &.red {
         .menu {
             background-color: #611611;
         }
