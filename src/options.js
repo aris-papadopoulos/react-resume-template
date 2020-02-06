@@ -1,7 +1,7 @@
 /* Change the theme's main color - can be either 'blue', 'red' or 'green' */
-export let color_theme = 'red'; 
+export let color_theme = 'blue'; 
 /* Set to "true" to enable or "false" to disable sections of the template */ 
-export const sections = {
+export let sections = {
     main: true,
     skill_set: true,
     work_samples: true,

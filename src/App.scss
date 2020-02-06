@@ -205,19 +205,15 @@ section .period {
 
 // Color Variables
 
-$blue         : #11609c;
 $blue-dark    : #3d5c7a;
-$blue-light   : #2196F3;
+$blue-light   : #2190E3;
 
-$red          : #811811;
 $red-dark     : #611611;
 $red-light    : #bb2411;
 
-$green          : #00a267;
 $green-dark     : #007858;
 $green-light    : #00c483;
 
-$pink          : #bf4dc1;
 $pink-dark     : #933698;
 $pink-light    : #cf53d1;
 
@@ -226,16 +222,16 @@ $pink-light    : #cf53d1;
         .menu {
             background-color: $blue-dark;
         }
-        .progress-bar {
-            background-color: $blue-light;
-        }
         .menu ul li:hover, .menu ul li.active {
             color: $blue-dark;
         }
-        h2, h3, .info svg {
-            color: $blue;
+        .progress-bar {
+            background-color: $blue-light;
         }
         .period {
+            color: $blue-light;
+        }
+        h2, .basic-info h3, .info svg {
             color: $blue-light;
         }
     }
@@ -243,16 +239,16 @@ $pink-light    : #cf53d1;
         .menu {
             background-color: $red-dark;
         }
-        .progress-bar {
-            background-color: $red-light;
-        }
         .menu ul li:hover, .menu ul li.active {
             color: $red-dark;
         }
-        h2, h3, .info svg {
-            color: $red;
+        .progress-bar {
+            background-color: $red-light;
         }
         .period {
+            color: $red-light;
+        }
+        h2, .basic-info h3, .info svg {
             color: $red-light;
         }
     }
@@ -260,16 +256,16 @@ $pink-light    : #cf53d1;
         .menu {
             background-color: $green-dark;
         }
-        .progress-bar {
-            background-color: $green-light;
-        }
         .menu ul li:hover, .menu ul li.active {
             color: $green-dark;
         }
-        h2, h3, .info svg {
-            color: $green;
+        .progress-bar {
+            background-color: $green-light;
         }
         .period {
+            color: $green-light;
+        }
+        h2, .basic-info h3, .info svg {
             color: $green-light;
         }
     }
@@ -277,16 +273,16 @@ $pink-light    : #cf53d1;
         .menu {
             background-color: $pink-dark;
         }
-        .progress-bar {
-            background-color: $pink-light;
-        }
         .menu ul li:hover, .menu ul li.active {
             color: $pink-dark;
         }
-        h2, h3, .info svg {
-            color: $pink;
+        .progress-bar {
+            background-color: $pink-light;
         }
         .period {
+            color: $pink-light;
+        }
+        h2, .basic-info h3, .info svg {
             color: $pink-light;
         }
     }
