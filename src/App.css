@@ -31,71 +31,10 @@ p {
     margin: 0 0 10px;
 }
 
-.person {
-    min-width: 400px;
-    min-height: 600px;
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
-    box-shadow: 1px 2px 12px 0px #000;
-    position: relative;
-}
 
-.social-links {
-    display: flex;
-    justify-content: center;
-    padding: 0;
-    margin-top: 1rem;
-}
+/* SITE SECTIONS */
 
-.social-links li {
-    margin: .5rem;
-}
-
-.social-links a {
-    font-size: 1.5rem;
-    color: #fff;
-}
-
-.menu {
-    height: 55vh;
-    display: flex;
-    background-color: #3d5c7a; /* 1c1e1f */
-    text-align: center;
-    box-shadow: 1px 2px 12px 0px #000;
-}
-
-.menu ul {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 0;
-}
-
-.menu ul li {
-    padding: 1rem;
-    width: 40px;
-    height: 40px;
-}
-
-.menu ul li:hover, .menu ul li.active {
-    transition: ease-in-out .3s;
-    background-color: #fafafa;
-    color: #3d5c7a;
-    cursor: pointer;
-}
-
-.info {
-    background-color: #1c1e1f;
-    height: 55vh;
-    width: 40%;
-    max-width: 600px;
-    padding: 1rem;
-    box-shadow: 1px 2px 12px 0px #000;
-}
-
-
+/* Wrapper */
 .App-header {
     background-color: #282c34;
     min-height: 100vh;
@@ -107,23 +46,93 @@ p {
     color: white;
 }
 
-.grid-wrapper {
-    display: grid;
+/* Menu */
+.menu {
+    height: 55vh;
+    display: flex;
+    background-color: #3d5c7a; /* 1c1e1f */
+    text-align: center;
+    box-shadow: 1px 2px 12px 0px #000;
+}
+.menu ul {
+    display: flex;
+    flex-direction: column;
     justify-content: center;
-    grid-template-columns: 1fr 1fr;
-    grid-gap: 2rem;
+    align-items: center;
+    padding: 0;
+}
+.menu ul li {
+    padding: 1rem;
+    width: 40px;
+    height: 40px;
+}
+.menu ul li:hover, .menu ul li.active {
+    transition: ease-in-out .3s;
+    background-color: #fafafa;
+    color: #3d5c7a;
+    cursor: pointer;
 }
 
-.grid-wrapper img {
-    max-width: 100%
+/* Person */
+.person {
+    min-width: 400px;
+    min-height: 600px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    box-shadow: 1px 2px 12px 0px #000;
+    position: relative;
 }
+.social-links {
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    margin-top: 1rem;
+}
+.social-links li {
+    margin: .5rem;
+}
+.social-links a {
+    font-size: 1.5rem;
+    color: #fff;
+}
+
+/* Info */
+.info {
+    background-color: #1c1e1f;
+    height: 55vh;
+    width: 40%;
+    max-width: 600px;
+    padding: 1rem;
+    box-shadow: 1px 2px 12px 0px #000;
+}
+
+
+/* PAGES */
+
+/* General */
+section.paragraph h3, section.experience h3, section.education h3, section.interests h3 {
+    font-size: 16px;
+    color: #fff;
+}
+section.paragraph .period, section.experience .period, section.education .period, section.interests .period {
+    font-size: 12px;
+    color: #00afec;
+}
+section.paragraph p, section.experience p, section.education p, section.interests p {
+    font-size: 14px;
+    color: #fff;
+}
+
+
+/* MAIN */
 
 .main-info-title {
     display: flex;
+    align-items: center;
     color: #11609c;
     margin: 3rem 0 .5rem 0;
 }
-
 .main-info-title h2 {
     font-size: 1.5rem;
     padding: 0 20px;
@@ -131,20 +140,8 @@ p {
     color: #11609c;
 }
 
-section.paragraph h3, section.experience h3, section.education h3, section.interests h3 {
-    font-size: 16px;
-    color: #fff;
-}
 
-section.paragraph .period, section.experience .period, section.education .period, section.interests .period {
-    font-size: 12px;
-    color: #00afec;
-}
-
-section.paragraph p, section.experience p, section.education p, section.interests p {
-    font-size: 14px;
-    color: #fff;
-}
+/* SKILL-SET */
 
 .skill-set p {
     display: flex;
@@ -163,6 +160,18 @@ section.paragraph p, section.experience p, section.education p, section.interest
     padding: 0 16px;
     font-size: 12px;
     border-radius: 8px;
+}
+
+/* WORK-SAMPLES */
+
+.grid-wrapper {
+    display: grid;
+    justify-content: center;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 2rem;
+}
+.grid-wrapper img {
+    max-width: 100%
 }
 
 /* CONTACT */
