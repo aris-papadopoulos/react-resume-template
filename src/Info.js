@@ -1,8 +1,12 @@
 import React, { useState, useEffect } from 'react';
 
-import { FaUserGraduate } from "react-icons/fa";
-import { FaBriefcase } from 'react-icons/fa';
-import { FaCoffee } from 'react-icons/fa';
+import { 
+    FaUserGraduate, 
+    FaBriefcase, 
+    FaCoffee, 
+    FaEnvelope, 
+    FaPhone
+} from "react-icons/fa";
 
 // Other 3rd party
 import { Scrollbars } from 'react-custom-scrollbars';
@@ -163,13 +167,13 @@ const Info = (props) => {
                         <div className="skill-set">
                             {(objectData[sheetTitle].values) ? objectData[sheetTitle].values.map(skill => {
                                 return (
-                                    <div className="skill">
+                                    <div className="skill" key={skill[0]}>
                                         <p className="skill-info">
                                             <span className="skill-name">{skill[0]}</span>
                                             <span className="skill-level">{`${skill[1]}%`}</span>
                                         </p>
-                                        <div class="progress-container">
-                                            <div class="progress-bar" style={{width: `${skill[1]}%`}}></div>
+                                        <div className="progress-container">
+                                            <div className="progress-bar" style={{width: `${skill[1]}%`}}></div>
                                         </div>
                                     </div>
                                 )
@@ -192,13 +196,14 @@ const Info = (props) => {
                     </div>
                 : null
             case 'contact':
-                console.log(objectData);
                 const contactData = (objectData[sheetTitle]) ? arrayToObject(objectData[sheetTitle].values) : null;
                 return (contactData) ? (
                     <div>
-                        <p><strong>E-Mail: </strong>{objectData[sheetTitle].values[1][1]}</p>
-                        <p><strong>Phone: </strong>{objectData[sheetTitle].values[2][1]}</p>
-                        <div dangerouslySetInnerHTML={createMarkup(objectData[sheetTitle].values[0][1])} />
+                        <h2>Contact</h2>
+                        <p>{contactData.text}</p>
+                        <div dangerouslySetInnerHTML={createMarkup(contactData.location)} />
+                        <p className="contact-data"><FaEnvelope />{contactData.email}</p>
+                        <p className="contact-data"><FaPhone />{contactData.phone}</p>
                     </div>
                 )
                 : null

@@ -164,3 +164,16 @@ section.paragraph p, section.experience p, section.education p, section.interest
     font-size: 12px;
     border-radius: 8px;
 }
+
+/* CONTACT */
+
+.contact-data {
+    display: flex;
+    align-items: center;
+    font-size: 20px;
+    margin: 1rem 0;
+}
+.contact-data svg {
+    margin-right: 20px;
+    color: #11609c;
+}
