@@ -5,10 +5,13 @@ import Menu from './Menu';
 import Person from './Person';
 import Info from './Info';
 
+import { pages } from './helpers';
+
+
 
 const App = () => {
 
-    const [selected, setSelected] = useState({sheetTitle: 'main', range: 'A:B'});
+    const [selected, setSelected] = useState(pages.main);
 
     function changeMenu(menuItem) {
         setSelected(menuItem);

@@ -4,6 +4,7 @@ import { FaStar } from 'react-icons/fa';
 import { FaBriefcase } from 'react-icons/fa';
 import { FaPhone } from 'react-icons/fa';
 
+import { pages } from './helpers';
 
 /**
 *   @author Aris Papadopoulos <aris.ppd@gmail.com> 
@@ -14,10 +15,10 @@ const Menu = (props) => {
     return (
         <div className="menu">
             <ul>
-                <li onClick={() => props.changeMenu({sheetTitle: 'main', range: 'A:D'})} className={(props.selected.sheetTitle === 'main') ? 'active' : ''}><FaUser /></li>
-                <li onClick={() => props.changeMenu({sheetTitle: 'skill-set', range: 'A:B'})} className={(props.selected.sheetTitle === 'skill-set') ? 'active' : ''}><FaStar /></li>
-                <li onClick={() => props.changeMenu({sheetTitle: 'work-samples', range: 'A:C'})} className={(props.selected.sheetTitle === 'work-samples') ? 'active' : ''}><FaBriefcase /></li>
-                <li onClick={() => props.changeMenu({sheetTitle: 'contact', range: 'A:B'})} className={(props.selected.sheetTitle === 'contact') ? 'active' : ''}><FaPhone /></li>
+                <li onClick={() => props.changeMenu(pages.main)} className={(props.selected.sheetTitle === 'main') ? 'active' : ''}><FaUser /></li>
+                <li onClick={() => props.changeMenu(pages.skill_set)} className={(props.selected.sheetTitle === 'skill-set') ? 'active' : ''}><FaStar /></li>
+                <li onClick={() => props.changeMenu(pages.work_samples)} className={(props.selected.sheetTitle === 'work-samples') ? 'active' : ''}><FaBriefcase /></li>
+                <li onClick={() => props.changeMenu(pages.contact)} className={(props.selected.sheetTitle === 'contact') ? 'active' : ''}><FaPhone /></li>
             </ul>
         </div>
     );
