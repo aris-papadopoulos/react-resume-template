@@ -104,6 +104,7 @@ const Info = (props) => {
                 }
                 return (objectData[sheetTitle]) ? 
                     <>
+                        <h2>About me</h2>
                         <section className="paragraph">
                             {groupedData.paragraph.map((paragraph, i) => {
                                 return (
@@ -163,7 +164,7 @@ const Info = (props) => {
             case 'skill-set':
                 return (objectData[sheetTitle]) ? 
                     <>
-                        <h3>Technical Skill Set</h3>
+                        <h2>Technical Skill Set</h2>
                         <div className="skill-set">
                             {(objectData[sheetTitle].values) ? objectData[sheetTitle].values.map(skill => {
                                 return (
@@ -183,17 +184,20 @@ const Info = (props) => {
                 : null
             case 'work-samples':
                 return (objectData[sheetTitle]) ? 
-                    <div className="grid-wrapper">
-                        {(objectData[sheetTitle].values) ? objectData[sheetTitle].values.map((item, i) => {
-                            return (
-                                <article key={item[0]}>
-                                    <img srcSet={item[2]} sizes="100vw" alt={item[0]} />
-                                    <h4>{item[0]}</h4>
-                                    <p>{item[1]}</p>
-                                </article>
-                            )
-                        }) : null}
-                    </div>
+                    <>
+                        <h2>Recent Projects</h2>
+                        <div className="work-samples">
+                            {(objectData[sheetTitle].values) ? objectData[sheetTitle].values.map((item, i) => {
+                                return (
+                                    <article key={item[0]}>
+                                        <img srcSet={item[2]} sizes="100vw" alt={item[0]} />
+                                        <h4>{item[0]}</h4>
+                                        <p>{item[1]}</p>
+                                    </article>
+                                )
+                            }) : null}
+                        </div>
+                    </>
                 : null
             case 'contact':
                 const contactData = (objectData[sheetTitle]) ? arrayToObject(objectData[sheetTitle].values) : null;

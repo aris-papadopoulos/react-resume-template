@@ -1,6 +1,6 @@
 body, p, h1, h2, h3, h4, h5 {
     font-family: 'Poppins', sans-serif;
-    overflow-y: auto;
+    /* overflow-y: auto; */
 }
 
 p, h1, h2, h3, h4, h5 {
@@ -17,12 +17,12 @@ h1 {
 }
 
 h2 {
-    font-size: 1.25rem;
+    font-size: 1.75rem;
     color: #11609f;
 }
 
 h3 {
-    font-size: 1.75rem;
+    font-size: 1.25rem;
     color: #11609f;
 }
 
@@ -101,7 +101,7 @@ p {
 .info {
     background-color: #1c1e1f;
     height: 55vh;
-    width: 40%;
+    width: 45%;
     max-width: 600px;
     padding: 1rem;
     box-shadow: 1px 2px 12px 0px #000;
@@ -164,14 +164,30 @@ section.paragraph p, section.experience p, section.education p, section.interest
 
 /* WORK-SAMPLES */
 
-.grid-wrapper {
-    display: grid;
-    justify-content: center;
-    grid-template-columns: 1fr 1fr;
-    grid-gap: 2rem;
+.work-samples {
+    display: flex;
+    flex-wrap: wrap;
 }
-.grid-wrapper img {
+.work-samples article {
+    width: calc(50% - 10px);
+    margin-bottom: 10px;
+}
+.work-samples article:nth-child(odd) {
+    margin-right: .5rem;
+}
+.work-samples article:nth-child(even) {
+    margin-left: .5rem;
+}
+.work-samples img {
     max-width: 100%
+}
+.work-samples h4 {
+    font-size: 20px;
+    word-break: break-all;
+    margin: 0;
+}
+.work-samples p {
+    font-size: 14px;
 }
 
 /* CONTACT */

@@ -34,7 +34,7 @@ function Person() {
         }}>
             <div className="basic-info">
                 <h1>{(personData) ? personData.fullName : ''}</h1>
-                <h2>{(personData) ? personData.jobTitle : ''}</h2>
+                <h3>{(personData) ? personData.jobTitle : ''}</h3>
                 <ul className="social-links">
                 {(personData && personData.linkedIn) ? <li> <a target="_blank" rel="noopener noreferrer" href={personData.linkedIn}><FaLinkedin /></a></li> : null}
                 {(personData && personData.facebook) ? <li> <a target="_blank" rel="noopener noreferrer" href={personData.facebook}><FaFacebook /></a></li> : null}
