@@ -200,7 +200,7 @@ const Info = (props) => {
                     </main>
                 : null
             case 'contact':
-                const contactData = (objectData[sheetTitle]) ? arrayToObject(objectData[sheetTitle].values) : null;
+                const contactData = (objectData[sheetTitle]) ? arrayToObject(infoData.values) : null;
                 return (contactData) ? (
                     <main>
                         <h2>Contact</h2>
@@ -217,7 +217,6 @@ const Info = (props) => {
         }
     }
 
-    console.log(infoData);
     return (
         <div className="info">
             <Scrollbars renderView={renderView}>
