@@ -79,6 +79,12 @@ p {
     box-shadow: 1px 2px 12px 0px #000;
     position: relative;
 }
+.basic-info {
+    h3 {
+        text-align: center;
+        text-shadow: 1px 2px 2px #333;
+    }
+}
 .social-links {
     display: flex;
     justify-content: center;
@@ -197,40 +203,91 @@ section .period {
 /* COLORS */
 
 
+// Color Variables
+
+$blue         : #11609c;
+$blue-dark    : #3d5c7a;
+$blue-light   : #2196F3;
+
+$red          : #811811;
+$red-dark     : #611611;
+$red-light    : #bb2411;
+
+$green          : #00a267;
+$green-dark     : #007858;
+$green-light    : #00c483;
+
+$pink          : #bf4dc1;
+$pink-dark     : #933698;
+$pink-light    : #cf53d1;
 
 .App {
     &.blue {
         .menu {
-            background-color: #3d5c7a;
+            background-color: $blue-dark;
         }
         .progress-bar {
-            background-color: #2196F3;
+            background-color: $blue-light;
         }
         .menu ul li:hover, .menu ul li.active {
-            color: #3d5c7a;
+            color: $blue-dark;
         }
         h2, h3, .info svg {
-            color: #11609c;
+            color: $blue;
         }
         .period {
-            color: #2196F3;
+            color: $blue-light;
         }
     }
     &.red {
         .menu {
-            background-color: #611611;
+            background-color: $red-dark;
         }
         .progress-bar {
-            background-color: #811811;
+            background-color: $red-light;
         }
         .menu ul li:hover, .menu ul li.active {
-            color: #611611;
+            color: $red-dark;
         }
         h2, h3, .info svg {
-            color: #a11811;
+            color: $red;
         }
         .period {
-            color: #811811;
+            color: $red-light;
+        }
+    }
+    &.green {
+        .menu {
+            background-color: $green-dark;
+        }
+        .progress-bar {
+            background-color: $green-light;
+        }
+        .menu ul li:hover, .menu ul li.active {
+            color: $green-dark;
+        }
+        h2, h3, .info svg {
+            color: $green;
+        }
+        .period {
+            color: $green-light;
+        }
+    }
+    &.pink {
+        .menu {
+            background-color: $pink-dark;
+        }
+        .progress-bar {
+            background-color: $pink-light;
+        }
+        .menu ul li:hover, .menu ul li.active {
+            color: $pink-dark;
+        }
+        h2, h3, .info svg {
+            color: $pink;
+        }
+        .period {
+            color: $pink-light;
         }
     }
 }

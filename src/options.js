@@ -1,5 +1,5 @@
 /* Change the theme's main color - can be either 'blue', 'red' or 'green' */
-export let color_theme = 'blue'; 
+export let color_theme = 'red'; 
 /* Set to "true" to enable or "false" to disable sections of the template */ 
 export const sections = {
     main: true,
