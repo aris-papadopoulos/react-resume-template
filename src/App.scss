@@ -220,10 +220,25 @@ $pink-light    : #cf53d1;
 .App {
     &.blue {
         .menu {
-            background-color: $blue-dark;
-        }
-        .menu ul li:hover, .menu ul li.active {
-            color: $blue-dark;
+            &.style1 {
+                background-color: $blue-dark;
+                ul li {
+                    &:hover, &.active {
+                        color: $blue-dark;
+                    }
+                }
+            }
+            &.style2 {
+                background-color: #1c1e1f;
+                ul li {
+                    transition: transform ease-in .1s;
+                    &:hover, &.active {
+                        background-color: initial;
+                        color: $blue-light;
+                        transform: scale(1.15);
+                    }
+                }
+            }
         }
         .progress-bar {
             background-color: $blue-light;
@@ -237,10 +252,25 @@ $pink-light    : #cf53d1;
     }
     &.red {
         .menu {
-            background-color: $red-dark;
-        }
-        .menu ul li:hover, .menu ul li.active {
-            color: $red-dark;
+            &.style1 {
+                background-color: $red-dark;
+                ul li {
+                    &:hover, &.active {
+                        color: $red-dark;
+                    }
+                }
+            }
+            &.style2 {
+                background-color: #1c1e1f;
+                ul li {
+                    transition: transform ease-in .1s;
+                    &:hover, &.active {
+                        background-color: initial;
+                        color: $red-light;
+                        transform: scale(1.15);
+                    }
+                }
+            }
         }
         .progress-bar {
             background-color: $red-light;
@@ -254,10 +284,25 @@ $pink-light    : #cf53d1;
     }
     &.green {
         .menu {
-            background-color: $green-dark;
-        }
-        .menu ul li:hover, .menu ul li.active {
-            color: $green-dark;
+            &.style1 {
+                background-color: $green-dark;
+                ul li {
+                    &:hover, &.active {
+                        color: $green-dark;
+                    }
+                }
+            }
+            &.style2 {
+                background-color: #1c1e1f;
+                ul li {
+                    transition: transform ease-in .1s;
+                    &:hover, &.active {
+                        background-color: initial;
+                        color: $green-light;
+                        transform: scale(1.15);
+                    }
+                }
+            }
         }
         .progress-bar {
             background-color: $green-light;
@@ -271,10 +316,25 @@ $pink-light    : #cf53d1;
     }
     &.pink {
         .menu {
-            background-color: $pink-dark;
-        }
-        .menu ul li:hover, .menu ul li.active {
-            color: $pink-dark;
+            &.style1 {
+                background-color: $pink-dark;
+                ul li {
+                    &:hover, &.active {
+                        color: $pink-dark;
+                    }
+                }
+            }
+            &.style2 {
+                background-color: #1c1e1f;
+                ul li {
+                    transition: transform ease-in .1s;
+                    &:hover, &.active {
+                        background-color: initial;
+                        color: $pink-light;
+                        transform: scale(1.15);
+                    }
+                }
+            }
         }
         .progress-bar {
             background-color: $pink-light;
@@ -333,20 +393,17 @@ $pink-light    : #cf53d1;
         font-size: 12px;
     }
 }
-
 .switch {
     position: relative;
     display: inline-block;
     width: 60px;
     height: 22px;
+    input { 
+        opacity: 0;
+        width: 0;
+        height: 0;
+    }
 }
-  
-.switch input { 
-    opacity: 0;
-    width: 0;
-    height: 0;
-}
-  
 .slider {
     position: absolute;
     cursor: pointer;
@@ -357,39 +414,32 @@ $pink-light    : #cf53d1;
     background-color: #ccc;
     -webkit-transition: .4s;
     transition: .4s;
+    &:before {
+        position: absolute;
+        content: "";
+        height: 16px;
+        width: 16px;
+        left: 4px;
+        bottom: 3px;
+        background-color: white;
+        -webkit-transition: .4s;
+        transition: .4s;
+    }
 }
-  
-.slider:before {
-    position: absolute;
-    content: "";
-    height: 16px;
-    width: 16px;
-    left: 4px;
-    bottom: 3px;
-    background-color: white;
-    -webkit-transition: .4s;
-    transition: .4s;
-}
-  
 input:checked + .slider {
     background-color: $blue-dark;
 }
-  
 input:focus + .slider {
     box-shadow: 0 0 1px $blue-dark;
-}
-  
+} 
 input:checked + .slider:before {
     -webkit-transform: translateX(36px);
     -ms-transform: translateX(36px);
     transform: translateX(36px);
-}
-  
-  /* Rounded sliders */
+} 
 .slider.round {
     border-radius: 22px;
-}
-  
-.slider.round:before {
-    border-radius: 50%;
+    &:before {
+        border-radius: 50%;
+    }
 }
