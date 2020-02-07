@@ -21,28 +21,28 @@ function OptionsPanel(props) {
                 <div>
                     <span className="page">Main</span>
                     <label className="switch">
-                        <input type="checkbox" onClick={() => setSections({...sections, main: !sections.main })} checked={sections.main} />
+                        <input type="checkbox" onClick={() => setSections({...sections, main: !sections.main })} defaultChecked={sections.main} />
                         <span className="slider round"></span>
                     </label>
                 </div>
                 <div>
                     <span className="page">Skill set</span>
                     <label className="switch">
-                        <input type="checkbox" onClick={() => setSections({...sections, skill_set: !sections.skill_set })} checked={sections.skill_set} />
+                        <input type="checkbox" onClick={() => setSections({...sections, skill_set: !sections.skill_set })} defaultChecked={sections.skill_set} />
                         <span className="slider round"></span>
                     </label>
                 </div>
                 <div>
                     <span className="page">Work samples</span>
                     <label className="switch">
-                        <input type="checkbox" onClick={() => setSections({...sections, work_samples: !sections.work_samples })} checked={sections.work_samples} />
+                        <input type="checkbox" onClick={() => setSections({...sections, work_samples: !sections.work_samples })} defaultChecked={sections.work_samples} />
                         <span className="slider round"></span>
                     </label>
                 </div>
                 <div>
                     <span className="page">Contact</span>
                     <label className="switch">
-                        <input type="checkbox" onClick={() => setSections({...sections, contact: !sections.contact })} checked={sections.contact} />
+                        <input type="checkbox" onClick={() => setSections({...sections, contact: !sections.contact })} defaultChecked={sections.contact} />
                         <span className="slider round"></span>
                     </label>
                 </div>
