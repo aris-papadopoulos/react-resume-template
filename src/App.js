@@ -6,7 +6,7 @@ import Person from './Person';
 import Info from './Info';
 import OptionsPanel from './OptionsPanel';
 
-import { theme_color, active_sections, demo_mode } from './options';
+import { theme_color, active_links, centeredMenu, demo_mode } from './options';
 import { pages } from './helpers';
 
 
@@ -17,7 +17,8 @@ const App = () => {
 
     // For Demo Mode
     const [themeColor, setThemeColor] = useState(theme_color);
-    const [sections, setSections] = useState(active_sections);
+    const [links, setLinks] = useState(active_links);
+    const [menuCentered, setMenuPosition] = useState(centeredMenu);
 
 
     function changeMenu(menuItem) {
@@ -26,15 +27,17 @@ const App = () => {
 
     return (
         <div className={`App ${themeColor}`}>
-            <Menu selected={selected} changeMenu={changeMenu} sections={sections} />
+            <Menu selected={selected} changeMenu={changeMenu} links={links} menuCentered={menuCentered} />
             <Person />
             <Info selected={selected} />
             {(demo_mode) ? 
                 <OptionsPanel 
                     themeColor={themeColor}
                     setThemeColor={setThemeColor}
-                    sections={sections} 
-                    setSections={setSections}
+                    links={links} 
+                    setLinks={setLinks}
+                    menuCentered={menuCentered}
+                    setMenuPosition={setMenuPosition}
                 />
                 : null
             }

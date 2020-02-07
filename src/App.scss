@@ -46,27 +46,34 @@ p {
 
 /* Menu */
 .menu {
+    position: relative;
     height: 55vh;
     display: flex;
     text-align: center;
     box-shadow: 1px 2px 12px 0px #000;
-}
-.menu ul {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 0;
-}
-.menu ul li {
-    padding: 1rem;
-    width: 40px;
-    height: 40px;
-}
-.menu ul li:hover, .menu ul li.active {
-    transition: ease-in-out .3s;
-    background-color: #fafafa;
-    cursor: pointer;
+    ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 0;
+        li {
+            padding: 1rem;
+            width: 40px;
+            height: 40px;
+            &:hover, &.active {
+                transition: ease-in-out .3s;
+                background-color: #fafafa;
+                cursor: pointer;
+            }
+            &.download-cv {
+                position: absolute;
+                bottom: 0;
+                a:visited {
+                    color: inherit;
+                }
+            }
+        }
+    }
 }
 
 /* Person */
@@ -378,6 +385,28 @@ $pink-light    : #cf53d1;
         &.green { background-color: $green-dark }
         &.pink { background-color: $pink-dark }
         &.active { border-color: #000 }
+    }
+}
+.menu-position {
+    text-align: center;
+    margin-bottom: 1rem; 
+    &-option {
+        background-color: #fff;
+        color: #333;
+        padding: 10px 20px;
+        font-size: 14px;
+        cursor: pointer;
+        transition: background-color .25s color .25s;
+        &:first-of-type {
+            border-radius: 22px 0 0 22px;
+        }
+        &:last-of-type {
+            border-radius: 0 22px 22px 0;
+        }
+        &:hover, &.active {
+            background-color: #3d5c7a;
+            color: #fff;
+        }
     }
 }
 .section-switches {

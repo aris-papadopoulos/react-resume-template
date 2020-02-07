@@ -1,10 +1,9 @@
 import React from 'react';
-import { FaUser } from "react-icons/fa";
-import { FaStar } from 'react-icons/fa';
-import { FaBriefcase } from 'react-icons/fa';
-import { FaPhone } from 'react-icons/fa';
+
+import { FaUser , FaStar, FaBriefcase, FaPhone, FaCloudDownloadAlt} from "react-icons/fa";
 
 import { pages } from './helpers';
+import { RESUME_URL } from './options';
 
 /**
 *   @author Aris Papadopoulos <aris.ppd@gmail.com> 
@@ -12,22 +11,25 @@ import { pages } from './helpers';
 */
 const Menu = (props) => {
 
-    const { sections } = props;
+    const { links, menuCentered } = props;
 
     return (
         <div className="menu style2">
-            <ul>
-                {(sections.main) ? 
-                    <li onClick={() => props.changeMenu(pages.main)} className={(props.selected.sheetTitle === 'main') ? 'active' : ''}><FaUser /></li> : null
+            <ul style={(menuCentered) ? {justifyContent: 'center'} : null}>
+                {(links.main) ? 
+                    <li onClick={() => props.changeMenu(pages.main)} title="Main Info" className={(props.selected.sheetTitle === 'main') ? 'active' : ''}><FaUser /></li> : null
                 }
-                {(sections.skill_set) ? 
-                    <li onClick={() => props.changeMenu(pages.skill_set)} className={(props.selected.sheetTitle === 'skill_set') ? 'active' : ''}><FaStar /></li> : null
+                {(links.skill_set) ? 
+                    <li onClick={() => props.changeMenu(pages.skill_set)} title="Skill Set" className={(props.selected.sheetTitle === 'skill_set') ? 'active' : ''}><FaStar /></li> : null
                 }
-                {(sections.work_samples) ? 
-                    <li onClick={() => props.changeMenu(pages.work_samples)} className={(props.selected.sheetTitle === 'work_samples') ? 'active' : ''}><FaBriefcase /></li> : null
+                {(links.work_samples) ? 
+                    <li onClick={() => props.changeMenu(pages.work_samples)} title="Work Samples" className={(props.selected.sheetTitle === 'work_samples') ? 'active' : ''}><FaBriefcase /></li> : null
                 }
-                {(sections.contact) ? 
-                    <li onClick={() => props.changeMenu(pages.contact)} className={(props.selected.sheetTitle === 'contact') ? 'active' : ''}><FaPhone /></li> : null
+                {(links.contact) ? 
+                    <li onClick={() => props.changeMenu(pages.contact)} title="Contact" className={(props.selected.sheetTitle === 'contact') ? 'active' : ''}><FaPhone /></li> : null
+                }
+                {(links.cv_download && RESUME_URL && RESUME_URL.length) ? 
+                    <li className="download-cv" title="Download CV"><a href="https://drive.google.com/open?id=1M7BI3pr5Necs8BaV0AAGQCniKyTptdpd" target="_blank" rel="noopener noreferrer"><FaCloudDownloadAlt /></a></li> : null
                 }
             </ul>
         </div>
