@@ -19,8 +19,7 @@ import { GOOGLE_SHEET_ID, GOOGLE_API_KEY } from './options';
 let objectData = {
     main: null,
     work_samples: null,
-    articles: null,
-    interests: null,
+    skill_set: null,
     contact: null
 }
 
@@ -63,15 +62,14 @@ const Info = (props) => {
     const { sheetTitle, range } = props.selected;
     const fetchURL = `https://sheets.googleapis.com/v4/spreadsheets/${GOOGLE_SHEET_ID}/values/${sheetTitle}!${range}?key=${GOOGLE_API_KEY}`;
 
-    const [infoData, setInfoData] = useState(objectData[props.selected]);
+    const [infoData, setInfoData] = useState(objectData);
 
     useEffect(() => {
-        if (!objectData[sheetTitle])
+        if (!infoData[sheetTitle])
         fetch(fetchURL)
             .then(response => response.json())
             .then(data => {
-                objectData[sheetTitle] = data;
-                setInfoData(data);
+                setInfoData({ ...infoData, [sheetTitle]: data });
         });
     });
 
@@ -99,10 +97,11 @@ const Info = (props) => {
 
             case 'main':
                 let groupedData;
-                if (objectData[sheetTitle]) {
-                    groupedData = groupMainInfoArray(objectData[sheetTitle].values);
+                if (infoData[sheetTitle] && infoData[sheetTitle].values) {
+                    console.log(infoData[sheetTitle])
+                    groupedData = groupMainInfoArray(infoData[sheetTitle].values);
                 }
-                return (objectData[sheetTitle]) ? 
+                return (infoData[sheetTitle]) ? 
                     <main>
                         <h2>About me</h2>
                         <section className="main-info paragraph">
@@ -161,12 +160,12 @@ const Info = (props) => {
                         </section>
                     </main>
                 : null
-            case 'skill-set':
-                return (objectData[sheetTitle]) ? 
+            case 'skill_set':
+                return (infoData[sheetTitle] && infoData[sheetTitle].values) ? 
                     <main>
                         <h2>Technical Skill Set</h2>
                         <div className="skill-set">
-                            {(objectData[sheetTitle].values) ? objectData[sheetTitle].values.map(skill => {
+                            {(infoData[sheetTitle].values) ? infoData[sheetTitle].values.map(skill => {
                                 return (
                                     <div className="skill" key={skill[0]}>
                                         <p className="skill-info">
@@ -182,12 +181,12 @@ const Info = (props) => {
                         </div>
                     </main>
                 : null
-            case 'work-samples':
-                return (objectData[sheetTitle]) ? 
+            case 'work_samples':
+                return (infoData[sheetTitle] && infoData[sheetTitle].values) ? 
                     <main>
                         <h2>Recent Projects</h2>
                         <div className="work-samples">
-                            {(objectData[sheetTitle].values) ? objectData[sheetTitle].values.map((item, i) => {
+                            {(infoData[sheetTitle].values) ? infoData[sheetTitle].values.map((item, i) => {
                                 return (
                                     <article key={item[0]}>
                                         <img srcSet={item[2]} sizes="100vw" alt={item[0]} />
@@ -200,7 +199,7 @@ const Info = (props) => {
                     </main>
                 : null
             case 'contact':
-                const contactData = (objectData[sheetTitle]) ? arrayToObject(infoData.values) : null;
+                const contactData = (infoData[sheetTitle]) ? arrayToObject(infoData[sheetTitle].values) : null;
                 return (contactData) ? (
                     <main>
                         <h2>Contact</h2>

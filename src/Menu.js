@@ -15,16 +15,16 @@ const Menu = (props) => {
     const { sections } = props;
 
     return (
-        <div className="menu">
+        <div className="menu style2">
             <ul>
                 {(sections.main) ? 
                     <li onClick={() => props.changeMenu(pages.main)} className={(props.selected.sheetTitle === 'main') ? 'active' : ''}><FaUser /></li> : null
                 }
                 {(sections.skill_set) ? 
-                    <li onClick={() => props.changeMenu(pages.skill_set)} className={(props.selected.sheetTitle === 'skill-set') ? 'active' : ''}><FaStar /></li> : null
+                    <li onClick={() => props.changeMenu(pages.skill_set)} className={(props.selected.sheetTitle === 'skill_set') ? 'active' : ''}><FaStar /></li> : null
                 }
                 {(sections.work_samples) ? 
-                    <li onClick={() => props.changeMenu(pages.work_samples)} className={(props.selected.sheetTitle === 'work-samples') ? 'active' : ''}><FaBriefcase /></li> : null
+                    <li onClick={() => props.changeMenu(pages.work_samples)} className={(props.selected.sheetTitle === 'work_samples') ? 'active' : ''}><FaBriefcase /></li> : null
                 }
                 {(sections.contact) ? 
                     <li onClick={() => props.changeMenu(pages.contact)} className={(props.selected.sheetTitle === 'contact') ? 'active' : ''}><FaPhone /></li> : null
