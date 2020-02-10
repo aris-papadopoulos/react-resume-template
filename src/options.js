@@ -1,8 +1,8 @@
 /* Change the theme's main color - can be either 'blue', 'red' or 'green' */
-export let theme_color = 'blue'; 
+export const theme_color = 'blue'; 
 
 /* Set to "true" to enable or "false" to disable sections of the template */ 
-export let active_links = {
+export const active_links = {
     main: true,
     skill_set: true,
     work_samples: true,
@@ -10,8 +10,10 @@ export let active_links = {
     cv_download: true
 }
 
+/* Menu styling, options available are "style1" and "style2" */
+export const menu_style = 'style1';
 /* Menu position, "true" places it in the center, while "false" places it from the start */
-export let centeredMenu = false;
+export const centered_menu = false;
 
 /* The URL your resume is uploaded */
 export const RESUME_URL = 'https://drive.google.com/open?id=1M7BI3pr5Necs8BaV0AAGQCniKyTptdpd';

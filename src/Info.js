@@ -98,7 +98,6 @@ const Info = (props) => {
             case 'main':
                 let groupedData;
                 if (infoData[sheetTitle] && infoData[sheetTitle].values) {
-                    console.log(infoData[sheetTitle])
                     groupedData = groupMainInfoArray(infoData[sheetTitle].values);
                 }
                 return (infoData[sheetTitle]) ? 

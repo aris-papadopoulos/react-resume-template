@@ -11,10 +11,10 @@ import { RESUME_URL } from './options';
 */
 const Menu = (props) => {
 
-    const { links, menuCentered } = props;
+    const { links, menuCentered, menuStyle } = props;
 
     return (
-        <div className="menu style2">
+        <div className={`menu ${menuStyle}`}>
             <ul style={(menuCentered) ? {justifyContent: 'center'} : null}>
                 {(links.main) ? 
                     <li onClick={() => props.changeMenu(pages.main)} title="Main Info" className={(props.selected.sheetTitle === 'main') ? 'active' : ''}><FaUser /></li> : null

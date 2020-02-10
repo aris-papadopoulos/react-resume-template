@@ -3,8 +3,8 @@ import React from 'react';
 
 function OptionsPanel(props) {
 
-    const { themeColor, setThemeColor, links, setLinks, menuCentered, setMenuPosition } = props;
-
+    const { themeColor, setThemeColor, links, setLinks, menuCentered, setMenuPosition, menuStyle, setMenuStyle } = props;
+    
     return (
         <div className="options-panel">
             <div className="color-select">
@@ -16,8 +16,15 @@ function OptionsPanel(props) {
                     <span onClick={() => setThemeColor('pink')} className={`${(themeColor === 'pink' ? 'active' : '')} color pink`}></span>
                 </div>
             </div>
+            <div className="menu-style">
+                <p>Menu Style</p>
+                <div>
+                    <span onClick={() => setMenuStyle('style1')} className={`menu-position-option ${(menuStyle === 'style1') ? 'active' : ''}`}>Style 1</span>
+                    <span onClick={() => setMenuStyle('style2')} className={`menu-position-option ${(menuStyle === 'style2') ? 'active' : ''}`}>Style 2</span>
+                </div>
+            </div>
             <div className="menu-position">
-                <p>Menu position</p>
+                <p>Menu Position</p>
                 <div>
                     <span onClick={() => setMenuPosition(true)} className={`menu-position-option ${(menuCentered) ? 'active' : ''}`}>Center</span>
                     <span onClick={() => setMenuPosition(false)} className={`menu-position-option ${(menuCentered) ? '' : 'active'}`}>Start</span>
