@@ -6,7 +6,8 @@ import {
     FaMedal,
     FaHeart, 
     FaEnvelope, 
-    FaPhone
+    FaPhone,
+    FaSkype
 } from "react-icons/fa";
 
 // Other 3rd party
@@ -225,9 +226,10 @@ const Info = (props) => {
                     <main>
                         <h2>Contact</h2>
                         <p>{contactData.text}</p>
-                        <div dangerouslySetInnerHTML={createMarkup(contactData.location)} />
-                        <p className="contact-data"><FaEnvelope />{contactData.email}</p>
-                        <p className="contact-data"><FaPhone />{contactData.phone}</p>
+                        {(contactData.location) ? <div dangerouslySetInnerHTML={createMarkup(contactData.location)} /> : null}
+                        {(contactData.email) ? <p className="contact-data"><FaEnvelope />{contactData.email}</p> : null}
+                        {(contactData.phone) ? <p className="contact-data"><FaPhone />{contactData.phone}</p> : null}
+                        {(contactData.skype) ? <p className="contact-data"><FaSkype />{contactData.skype}</p> : null}
                     </main>
                 )
                 : null
