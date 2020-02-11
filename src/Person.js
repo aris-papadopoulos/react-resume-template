@@ -33,7 +33,7 @@ function Person() {
 
     return (
         <div className="person" style={{
-            background: `url(${(personData && personData.picture) ? personData.picture : ''}) no-repeat`
+            background: `url(${(personData && personData.picture) ? personData.picture : ''}) center top/cover no-repeat`
         }}>
             <div className="basic-info">
                 <h1>{(personData) ? personData.fullName : ''}</h1>
