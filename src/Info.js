@@ -2,7 +2,8 @@ import React, { useState, useEffect } from 'react';
 
 import { 
     FaUserGraduate, 
-    FaBriefcase, 
+    FaBriefcase,
+    FaMedal,
     FaHeart, 
     FaEnvelope, 
     FaPhone
@@ -35,6 +36,7 @@ const groupMainInfoArray = (arr) => {
     let mainInfoObj = {
         paragraph: [],
         experience: [],
+        awards: [],
         education: [],
         interests: []
     };
@@ -45,10 +47,13 @@ const groupMainInfoArray = (arr) => {
         else if (item[0] === 'experience') {
             mainInfoObj.experience.push([item[1], item[2], item[3]]);
         }
+        else if (item[0] === 'award') {
+            mainInfoObj.awards.push([item[1], item[2], item[3]]);
+        }
         else if (item[0] === 'education') {
             mainInfoObj.education.push([item[1], item[2], item[3]]);
         }
-        else if (item[0] === 'interests') {
+        else if (item[0] === 'interest') {
             mainInfoObj.interests.push([item[1], item[2]]);
         }
         return mainInfoObj;
@@ -124,6 +129,21 @@ const Info = (props) => {
                                         <span className="period">{experience[2]}</span>
                                         <h3>{experience[0]}</h3>
                                         <p>{experience[1]}</p>
+                                    </article>
+                                )
+                            })}
+                        </section>
+                        <section className="main-info award">
+                            <div className="main-info-title">
+                                <FaMedal />
+                                <h2>Awards</h2>
+                            </div>
+                            {groupedData.awards.map((award, i) => {
+                                return (
+                                    <article key={i}>
+                                        <span className="period">{award[2]}</span>
+                                        <h3>{award[0]}</h3>
+                                        <p>{award[1]}</p>
                                     </article>
                                 )
                             })}
