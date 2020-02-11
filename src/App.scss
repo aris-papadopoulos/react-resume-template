@@ -1,3 +1,38 @@
+/* VARIABLES */
+
+// Color Variables
+
+$blue-dark    : #3d5c7a;
+$blue-light   : #2190E3;
+
+$red-dark     : #611611;
+$red-light    : #bb2411;
+
+$green-dark     : #007858;
+$green-light    : #00c483;
+
+$pink-dark     : #933698;
+$pink-light    : #cf53d1;
+
+// Breakpoints
+$breakpoints:(
+    'mobile':                   '(max-width: 600px)',
+    'tablet':                   '(min-width: 601px) and (max-width: 992px)',
+    'tablet-up':                '(min-width: 601px)',
+    'mobile-tablet':            '(max-width: 992px)',
+    'desktop-up':               '(min-width: 993px)',
+);
+
+@mixin screen($name) {
+    @if map-has-key($breakpoints, $name) {
+        @media only screen and #{map-get($breakpoints, $name)} {
+            @content;
+        }
+    }
+}
+
+/* BASIC */
+
 body, p, h1, h2, h3, h4, h5 {
     font-family: 'Poppins', sans-serif;
     /* overflow-y: auto; */
@@ -212,21 +247,6 @@ section .period {
 
 /* COLORS */
 
-
-// Color Variables
-
-$blue-dark    : #3d5c7a;
-$blue-light   : #2190E3;
-
-$red-dark     : #611611;
-$red-light    : #bb2411;
-
-$green-dark     : #007858;
-$green-light    : #00c483;
-
-$pink-dark     : #933698;
-$pink-light    : #cf53d1;
-
 .App {
     &.blue {
         .menu {
@@ -366,7 +386,7 @@ $pink-light    : #cf53d1;
     bottom: 0;
     right: 0;
     background-color: #333;
-    border: 4px solid #777;
+    border: 4px solid #999;
     border-radius: 4px;
     width: 320px;
     transition: transform .6s;
