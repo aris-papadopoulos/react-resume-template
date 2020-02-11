@@ -246,7 +246,7 @@ section .period {
     article {
         width: calc(50% - 10px);
         margin-bottom: 10px;
-        @include screen('mobile') {
+        @include screen('mobile-tablet') {
             width: initial;
         }
         &:nth-child(odd) {
@@ -266,6 +266,7 @@ section .period {
         color: #f3f3f3;
         font-weight: 700;
         text-decoration: underline;
+        display: block;
     }
     p {
         font-size: 14px;
