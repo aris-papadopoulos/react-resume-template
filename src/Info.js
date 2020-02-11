@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { 
     FaUserGraduate, 
     FaBriefcase, 
-    FaCoffee, 
+    FaHeart, 
     FaEnvelope, 
     FaPhone
 } from "react-icons/fa";
@@ -145,7 +145,7 @@ const Info = (props) => {
                         </section>
                         <section className="main-info interests">
                             <div className="main-info-title">
-                                <FaCoffee />
+                                <FaHeart />
                                 <h2>Interests</h2>
                             </div>
                             {groupedData.interests.map((interests, i) => {
