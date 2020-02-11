@@ -1,7 +1,7 @@
 export const pages = {
     main: { sheetTitle: 'main', range: 'A:D' },
     skill_set: { sheetTitle: 'skill_set', range: 'A:B' },
-    work_samples: { sheetTitle: 'work_samples', range: 'A:C' },
+    work_samples: { sheetTitle: 'work_samples', range: 'A:D' },
     contact: {sheetTitle: 'contact', range: 'A:B'}
 }
 

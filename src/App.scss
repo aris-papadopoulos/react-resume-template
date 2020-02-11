@@ -185,10 +185,13 @@ section .period {
 .work-samples img {
     max-width: 100%
 }
-.work-samples h4 {
+.work-samples a, .work-samples span {
     font-size: 20px;
     word-break: break-all;
     margin: 0;
+    color: #f3f3f3;
+    font-weight: 700;
+    text-decoration: underline;
 }
 .work-samples p {
     font-size: 14px;

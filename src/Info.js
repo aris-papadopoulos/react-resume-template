@@ -208,9 +208,11 @@ const Info = (props) => {
                             {(infoData[sheetTitle].values) ? infoData[sheetTitle].values.map((item, i) => {
                                 return (
                                     <article key={item[0]}>
-                                        <img srcSet={item[2]} sizes="100vw" alt={item[0]} />
-                                        <h4>{item[0]}</h4>
-                                        <p>{item[1]}</p>
+                                        <img srcSet={item[3]} sizes="100vw" alt={item[0]} />
+                                        {(item[1]) 
+                                            ? <a href={item[1]} target="_blank" rel="noopener noreferrer">{item[0]}</a> 
+                                            : <span>{item[0]}</span>}
+                                        <p>{item[2]}</p>
                                     </article>
                                 )
                             }) : null}
