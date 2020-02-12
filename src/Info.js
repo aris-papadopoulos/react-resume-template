@@ -109,6 +109,7 @@ const Info = (props) => {
                 return (infoData[sheetTitle]) ? 
                     <main>
                         <h2>About me</h2>
+                        {(groupedData.paragraph.length) ?
                         <section className="main-info paragraph">
                             {groupedData.paragraph.map((paragraph, i) => {
                                 return (
@@ -119,6 +120,8 @@ const Info = (props) => {
                                 )
                             })}
                         </section>
+                        : null}
+                        {(groupedData.experience.length) ?
                         <section className="main-info experience">
                             <div className="main-info-title">
                                 <FaBriefcase />
@@ -134,6 +137,8 @@ const Info = (props) => {
                                 )
                             })}
                         </section>
+                        : null}
+                        {(groupedData.awards.length) ?
                         <section className="main-info award">
                             <div className="main-info-title">
                                 <FaMedal />
@@ -149,6 +154,8 @@ const Info = (props) => {
                                 )
                             })}
                         </section>
+                        : null}
+                        {(groupedData.education.length) ?
                         <section className="main-info education">
                             <div className="main-info-title">
                                 <FaUserGraduate />
@@ -164,6 +171,8 @@ const Info = (props) => {
                                 )
                             })}
                         </section>
+                        : null}
+                        {(groupedData.interests.length) ?
                         <section className="main-info interests">
                             <div className="main-info-title">
                                 <FaHeart />
@@ -178,14 +187,15 @@ const Info = (props) => {
                                 )
                             })}
                         </section>
+                        : null}
                     </main>
                 : null
             case 'skill_set':
-                return (infoData[sheetTitle] && infoData[sheetTitle].values) ? 
+                return ( 
                     <main>
                         <h2>Technical Skill Set</h2>
                         <div className="skill-set">
-                            {(infoData[sheetTitle].values) ? infoData[sheetTitle].values.map(skill => {
+                            {(infoData[sheetTitle] && infoData[sheetTitle].values) ? infoData[sheetTitle].values.map(skill => {
                                 return (
                                     <div className="skill" key={skill[0]}>
                                         <p className="skill-info">
@@ -200,13 +210,13 @@ const Info = (props) => {
                             }) : null}
                         </div>
                     </main>
-                : null
+                )
             case 'work_samples':
-                return (infoData[sheetTitle] && infoData[sheetTitle].values) ? 
+                return (
                     <main>
                         <h2>Recent Projects</h2>
                         <div className="work-samples">
-                            {(infoData[sheetTitle].values) ? infoData[sheetTitle].values.map((item, i) => {
+                            {(infoData[sheetTitle] && infoData[sheetTitle].values) ? infoData[sheetTitle].values.map((item, i) => {
                                 return (
                                     <article key={item[0]}>
                                         <img srcSet={item[3]} sizes="100vw" alt={item[0]} />
@@ -216,16 +226,17 @@ const Info = (props) => {
                                         <p>{item[2]}</p>
                                     </article>
                                 )
-                            }) : null}
+                            }) 
+                            : null}
                         </div>
                     </main>
-                : null
+                )
             case 'contact':
                 const contactData = (infoData[sheetTitle]) ? arrayToObject(infoData[sheetTitle].values) : null;
                 return (contactData) ? (
                     <main>
                         <h2>Contact</h2>
-                        <p>{contactData.text}</p>
+                        {(contactData.text) ? <p>{contactData.text}</p> : null}
                         {(contactData.location) ? <div dangerouslySetInnerHTML={createMarkup(contactData.location)} /> : null}
                         {(contactData.email) ? <p className="contact-data"><FaEnvelope />{contactData.email}</p> : null}
                         {(contactData.phone) ? <p className="contact-data"><FaPhone />{contactData.phone}</p> : null}
