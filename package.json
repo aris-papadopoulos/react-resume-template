@@ -1,39 +1,43 @@
 {
-  "name": "react-cv",
-  "version": "0.1.0",
-  "private": true,
-  "dependencies": {
-    "@testing-library/jest-dom": "^4.2.4",
-    "@testing-library/react": "^9.3.2",
-    "@testing-library/user-event": "^7.1.2",
-    "node-sass": "^4.13.1",
-    "react": "^16.12.0",
-    "react-custom-scrollbars": "^4.2.1",
-    "react-dom": "^16.12.0",
-    "react-icons": "^3.8.0",
-    "react-scripts": "3.3.0"
-  },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "compile:sass": "node-sass src/ -o src/",
-    "watch:sass": "npm run compile:sass && npm run compile:sass -- -w"
-  },
-  "eslintConfig": {
-    "extends": "react-app"
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  }
+    "name": "react-cv",
+    "version": "0.1.0",
+    "private": true,
+    "homepage": "https://aris-papadopoulos.github.io/react-resume-template/",
+    "dependencies": {
+        "@testing-library/jest-dom": "^4.2.4",
+        "@testing-library/react": "^9.3.2",
+        "@testing-library/user-event": "^7.1.2",
+        "gh-pages": "^2.2.0",
+        "node-sass": "^4.13.1",
+        "react": "^16.12.0",
+        "react-custom-scrollbars": "^4.2.1",
+        "react-dom": "^16.12.0",
+        "react-icons": "^3.8.0",
+        "react-scripts": "3.3.0"
+    },
+    "scripts": {
+        "start": "react-scripts start",
+        "build": "react-scripts build",
+        "test": "react-scripts test",
+        "eject": "react-scripts eject",
+        "compile:sass": "node-sass src/ -o src/",
+        "watch:sass": "npm run compile:sass && npm run compile:sass -- -w",
+        "predeploy": "yarn run build",
+        "deploy": "gh-pages -d build"
+    },
+    "eslintConfig": {
+        "extends": "react-app"
+    },
+    "browserslist": {
+        "production": [
+            ">0.2%",
+            "not dead",
+            "not op_mini all"
+        ],
+        "development": [
+            "last 1 chrome version",
+            "last 1 firefox version",
+            "last 1 safari version"
+        ]
+    }
 }
