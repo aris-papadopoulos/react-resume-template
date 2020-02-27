@@ -2,8 +2,8 @@ import React from 'react';
 
 import { FaUser , FaStar, FaBriefcase, FaPhone, FaCloudDownloadAlt} from "react-icons/fa";
 
-import { pages } from './helpers';
-import { RESUME_URL } from './setup';
+import { pages } from '../helpers';
+import { RESUME_URL } from '../setup';
 
 /**
 *   @author Aris Papadopoulos <aris.ppd@gmail.com> 

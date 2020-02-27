@@ -14,7 +14,7 @@ import {
 import { Scrollbars } from 'react-custom-scrollbars';
 
 // Helpers
-import { GOOGLE_SHEET_ID, GOOGLE_API_KEY } from './setup';
+import { GOOGLE_SHEET_ID, GOOGLE_API_KEY } from '../setup';
 
 /*  Holds data as they come from the Google Sheets API requests, 
     so that we no longer need to refetch after first request */

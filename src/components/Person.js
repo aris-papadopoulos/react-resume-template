@@ -9,7 +9,7 @@ import {
 } from 'react-icons/fa';
 
 // Helpers
-import { GOOGLE_SHEET_ID, GOOGLE_API_KEY } from './setup';
+import { GOOGLE_SHEET_ID, GOOGLE_API_KEY } from '../setup';
 
 const arrayToObject = (arr) =>
 Object.assign({}, ...arr.map(item => ({[item[0]]: item[1]})));
