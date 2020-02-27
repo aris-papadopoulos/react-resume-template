@@ -8,7 +8,7 @@ This template uses React to create the user interface and Google Drive API to fe
 ### Options
 
 The template also has a handful of styling options to customize your preference, namely: 
-- Color change: Blue-ish, Red-ish, Green or Pink
+- Color change: Blue, Red, Green or Pink
 - Menu alignment - Align to top/left (if on desktop/mobile) or middle 
 - Enable/disable certain pages 
 - Menu style type 
@@ -27,7 +27,7 @@ The Google sheet API consists of 5 pages, each representing a page of the websit
 **basic** - Your name, picture, profession and links to your social media. The fields with the grey background should not be removed.
 If you wish to remove a certain field, you can just delete its value from corresponding "B" column.
 
-**main** - The CV-type of info in the main page. These are grouped in 5 categories: "paragraph", "experience", "award", "education", "interest"
+**main** - The CV type of info in the main page. These are grouped in 5 categories: "paragraph", "experience", "award", "education", "interest"
 If want to fill in your own, just type to a new row the category of info, the title and the description like the examples given.
 
 **skill_set** - A list of your skills and a bar showing your expertise in the particular skill.
