@@ -6,7 +6,7 @@ import Person from './Person';
 import Info from './Info';
 import OptionsPanel from './OptionsPanel';
 
-import { theme_color, active_links, centered_menu, menu_style, demo_mode } from './options';
+import { theme_color, active_links, centered_menu, menu_style, demo_mode } from './setup';
 import { pages } from './helpers';
 
 
