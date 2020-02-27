@@ -50,6 +50,7 @@ svg {
 
 /* Menu */
 .menu {
+  display: inline-flex;
   position: relative;
   height: 55vh;
   text-align: center;
@@ -57,6 +58,7 @@ svg {
 
 @media only screen and (max-width: 600px) {
   .menu {
+    display: block;
     width: 100%;
     height: auto;
     position: fixed;
@@ -99,6 +101,7 @@ svg {
     right: 0; } }
 
 .menu ul li.download-cv a {
+  display: inline-flex;
   color: #bababa; }
 
 /* Person */

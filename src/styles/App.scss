@@ -93,11 +93,13 @@ svg {
 
 /* Menu */
 .menu {
+    display: inline-flex;
     position: relative;
     height: 55vh;
     text-align: center;
     box-shadow: 1px 2px 12px 0px #000;
     @include screen('mobile') {
+        display: block;
         width: 100%;
         height: auto;
         position: fixed;
@@ -134,6 +136,7 @@ svg {
                     right: 0;
                 }
                 a {
+                    display: inline-flex;
                     color: #bababa;
                 }
             }
