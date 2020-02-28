@@ -434,12 +434,14 @@ section .period {
     position: fixed;
     bottom: 0;
     right: 0;
+    z-index: 2;
     background-color: #333;
     border: 4px solid #999;
     border-radius: 4px;
     width: 320px;
     @include screen('mobile') {
         width: calc(100% - 8px);
+        max-height: calc(100vh - 66px);
     }
     transition: transform .6s;
     &:not(.active) {
@@ -482,8 +484,8 @@ section .period {
     }
     .color {
         display: inline-block;
-        width: 36px;
-        height: 36px;
+        width: 2rem;
+        height: 2rem;
         margin: 10px;
         cursor: pointer;
         border: 3px solid #f3f3f3;
@@ -500,7 +502,7 @@ section .period {
     &-option {
         background-color: #fff;
         color: #333;
-        padding: 10px 20px;
+        padding: 8px 20px;
         font-size: 14px;
         cursor: pointer;
         transition: background-color .15s, color .15s;
@@ -525,7 +527,9 @@ section .period {
         display: flex;
         align-items: center;
         justify-content: space-between;
-        margin-bottom: 10px;
+        &:not(:last-of-type) {
+            margin-bottom: .5rem;        
+        }
     }
     .page {
         font-size: 12px;
